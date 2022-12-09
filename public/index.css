@@ -33,3 +33,11 @@ body {
     border: 1px solid white;
     border-radius: 5px;
 }
+
+.vert-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5em;
+}
