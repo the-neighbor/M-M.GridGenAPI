@@ -14,6 +14,11 @@ app.get("/api/gen", async (req, res) => {
     rows = parseInt(rows);
     columns = parseInt(columns);
     pieces = parseInt(pieces);
+    if (rows < 1 || columns < 1 || pieces < 1 || isNaN(rows) || isNaN(columns) || isNaN(pieces)) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+    console.log
     console.log(rows, columns, pieces)
     const places = await gridGen.cycleGenerator(rows, columns, pieces);
     console.log(places)

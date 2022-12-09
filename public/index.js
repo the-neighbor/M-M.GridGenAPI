@@ -1,13 +1,24 @@
 async function submitForm() {
+    const errorEl = document.getElementById("error");
+    errorEl.innerHTML = "";
     const rows = document.getElementById("inputRows").value;
     const columns = document.getElementById("inputColumns").value;
     const pieces = document.getElementById("inputPieces").value;
     const url = `/api/gen?rows=${rows}&columns=${columns}&pieces=${pieces}`;
     const data = await fetch(url);
-    const json = await data.json();
-    console.log(json);
-    createGrid(json.cssData);
-    createCode(json.cssData);
+    if (data.ok) {
+        const json = await data.json();
+        console.log(json);
+        createGrid(json.cssData);
+        createCode(json.cssData);
+    } else {
+        console.log("Error");
+        errorEl.innerHTML = `<div class="alert alert-danger alert-dismissible" role="alert">
+        Error: ${data.status} ${data.statusText}
+        Please check your inputs and try again.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+    }
 }
 
 async function createCode (cssData) {
