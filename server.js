@@ -14,7 +14,7 @@ app.get("/api/gen", async (req, res) => {
     rows = parseInt(rows);
     columns = parseInt(columns);
     pieces = parseInt(pieces);
-    if (rows < 1 || columns < 1 || pieces < 1 || isNaN(rows) || isNaN(columns) || isNaN(pieces)) {
+    if (rows < 1 || columns < 1 || pieces < 1 || isNaN(rows) || isNaN(columns) || isNaN(pieces) || pieces > rows * columns) {
         res.status(400).send("Bad Request");
         return;
     }

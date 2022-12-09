@@ -10,8 +10,14 @@
 }
 
 body {
-    background-color: #000000;
+    background-image: url(/assets/spiraltile3.svg);
     color: white;
+}
+
+
+#content, #about{
+    background-color: #000000d0;
+    padding:2em;
 }
 
 .form-control  {
