@@ -8,3 +8,22 @@
     padding: 2em;
     border-radius: 20px;
 }
+
+body {
+    background-color: #000000;
+    color: white;
+}
+
+.form-control  {
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 5px;
+}
