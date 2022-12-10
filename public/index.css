@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,200;1,300;1,600&display=swap');
+
 #grid-parent {
     width: 100%;
     aspect-ratio: 1/1;
@@ -12,6 +14,8 @@
 body {
     background-image: url(/assets/spiraltile3.svg);
     color: white;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-style: italic;
 }
 
 
